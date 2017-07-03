@@ -44,7 +44,7 @@ extension Role: ContentsJSONStringConvertible {
     }
 }
 
-// MARK: - Role
+// MARK: - Subtype
 
 public enum Subtype: String {
     case any
