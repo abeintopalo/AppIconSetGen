@@ -30,8 +30,7 @@ public struct AppIconSet {
         try imageSizesInPixels.forEach { sizeInPixels in
             let iconFileName = appIconFileName(from: sizeInPixels)
             print("Creating \(iconFileName)")
-            let scaledImage = sourceImage.resized(width: sizeInPixels, height: sizeInPixels)
-            if let imageData = scaledImage.imagePNGRepresentation() {
+            if let imageData = sourceImage.imagePNGRepresentation(widthInPixels: sizeInPixels, heightInPixels: sizeInPixels) {
                 let outputFile = folderPath + Path(iconFileName)
                 try outputFile.write(imageData as Data)
             }
