@@ -19,6 +19,7 @@ public enum Idiom: String {
     case iPad
     case mac
     case watch
+    case iosMarketing = "ios-marketing"
 }
 
 extension Idiom: ContentsJSONStringConvertible {
@@ -108,6 +109,7 @@ public let iconInfoItemsIOS = [
     IconInfo(idiom: .iPad, size: 76, scale: 1),
     IconInfo(idiom: .iPad, size: 76, scale: 2),
     IconInfo(idiom: .iPad, size: 83.5, scale: 2),
+    IconInfo(idiom: .iosMarketing, size: 1024, scale: 1),
 ]
 
 public let iconInfoItemsWatchOS = [
