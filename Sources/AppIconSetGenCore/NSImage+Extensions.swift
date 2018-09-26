@@ -18,18 +18,18 @@ extension NSImage {
                                         samplesPerPixel: 4,
                                         hasAlpha: true,
                                         isPlanar: false,
-                                        colorSpaceName: NSCalibratedRGBColorSpace,
+                                        colorSpaceName: NSColorSpaceName.calibratedRGB,
                                         bytesPerRow: 0,
                                         bitsPerPixel: 0)
         imageRep?.size = NSMakeSize(widthInPixels, heightInPixels)
 
         NSGraphicsContext.saveGraphicsState()
-        NSGraphicsContext.setCurrent(NSGraphicsContext(bitmapImageRep: imageRep!))
+        NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: imageRep!)
         draw(in: NSMakeRect(0, 0, widthInPixels, heightInPixels), from: NSZeroRect, operation: .copy, fraction: 1.0)
         NSGraphicsContext.restoreGraphicsState()
 
-        let imageProps: [String: Any] = [:]
-        let imageData = imageRep?.representation(using: NSBitmapImageFileType.PNG, properties: imageProps) as NSData?
+        let imageProps: [NSBitmapImageRep.PropertyKey : Any] = [:]
+        let imageData = imageRep?.representation(using: NSBitmapImageRep.FileType.png, properties: imageProps) as NSData?
         return imageData
     }
 }
