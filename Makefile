@@ -1,9 +1,16 @@
-INSTALL_PATH = /usr/local/bin/appiconsetgen
+PREFIX?=/usr/local
+INSTALL_NAME = appiconsetgen
 
-install:
-	swift package --enable-prefetching update
-	swift build --enable-prefetching -c release -Xswiftc -static-stdlib
-	cp -f .build/release/AppIconSetGen $(INSTALL_PATH)
+install: build install_bin
+
+build:
+	swift package update
+	swift build -c release -Xswiftc -static-stdlib
+
+install_bin:
+	mkdir -p $(PREFIX)/bin
+	mv .build/release/AppIconSetGen .build/release/$(INSTALL_NAME)
+	install .build/release/$(INSTALL_NAME) $(PREFIX)/bin
 
 uninstall:
-	rm -f $(INSTALL_PATH)
+	rm -f $(PREFIX)/bin/$(INSTALL_NAME)
