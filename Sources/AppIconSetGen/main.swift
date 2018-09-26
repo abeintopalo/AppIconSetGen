@@ -16,9 +16,8 @@ let main = command(
     Flag("iOS", description: "Generates app icons for iOS"),
     Flag("watchOS", description: "Generates app icons for watchOS"),
     Flag("macOS", description: "Generates app icons for macOS"),
-    Option("output", ".", description: "Output folder of the generated App Icon set"),
-    Option("appIconSetName", "AppIcon", description: "App icon set name")
-
+    Option("output", default: ".", description: "Output folder of the generated App Icon set"),
+    Option("appIconSetName", default: "AppIcon", description: "App icon set name")
 ) { inputFile, iOS, watchOS, macOS, output, appIconSetName in
 
     guard iOS || watchOS || macOS else {
