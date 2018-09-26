@@ -20,6 +20,7 @@ public enum Idiom: String {
     case mac
     case watch
     case iosMarketing = "ios-marketing"
+    case watchMarketing = "watch-marketing"
 }
 
 extension Idiom: ContentsJSONStringConvertible {
@@ -35,7 +36,6 @@ public enum Role: String {
     case notificationCenter
     case companionSettings
     case appLauncher
-    case longLook
     case quickLook
 }
 
@@ -51,6 +51,8 @@ public enum Subtype: String {
     case any
     case mm38
     case mm42
+    case mm40
+    case mm44
 }
 
 extension Subtype: ContentsJSONStringConvertible {
@@ -58,6 +60,8 @@ extension Subtype: ContentsJSONStringConvertible {
         switch self {
         case .mm38: return "38mm"
         case .mm42: return "42mm"
+        case .mm40: return "40mm"
+        case .mm44: return "44mm"
         default: return rawValue
         }
     }
@@ -118,9 +122,12 @@ public let iconInfoItemsWatchOS = [
     IconInfo(idiom: .watch, size: 29, role: .companionSettings, subtype: .any, scale: 2),
     IconInfo(idiom: .watch, size: 29, role: .companionSettings, subtype: .any, scale: 3),
     IconInfo(idiom: .watch, size: 40, role: .appLauncher, subtype: .mm38, scale: 2),
-    IconInfo(idiom: .watch, size: 44, role: .longLook, subtype: .mm42, scale: 2),
+    IconInfo(idiom: .watch, size: 44, role: .appLauncher, subtype: .mm40, scale: 2),
+    IconInfo(idiom: .watch, size: 50, role: .appLauncher, subtype: .mm44, scale: 2),
     IconInfo(idiom: .watch, size: 86, role: .quickLook, subtype: .mm38, scale: 2),
     IconInfo(idiom: .watch, size: 98, role: .quickLook, subtype: .mm42, scale: 2),
+    IconInfo(idiom: .watch, size: 108, role: .quickLook, subtype: .mm44, scale: 2),
+    IconInfo(idiom: .watchMarketing, size: 1024, scale: 1),
 ]
 
 public let iconInfoItemsMacOS = [
