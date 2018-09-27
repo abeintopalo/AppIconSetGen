@@ -15,7 +15,7 @@ public struct AppIconSet {
 
     public func createOnDisk(sourceImage: NSImage, outputFolderPath: String, appIconSetName: String) throws {
         let items = iconInfoItems
-        let imageSizesInPixels = items.reduce(Set<CGFloat>()) { (result: inout Set<CGFloat>, iconInfo) in
+        let imageSizesInPixels = items.reduce(into: Set<CGFloat>()) { (result: inout Set<CGFloat>, iconInfo) in
             result.insert(iconInfo.sizeInPixels)
         }
 
@@ -40,7 +40,7 @@ public struct AppIconSet {
         let contentsJSONFile = folderPath + Path("Contents.json")
         print("Creating \(contentsJSONFile)")
 
-        let entries = items.reduce([String]()) { (result: inout [String], iconInfo) in
+        let entries = items.reduce(into: [String]()) { (result: inout [String], iconInfo) in
             let iconFileName = appIconFileName(from: iconInfo.sizeInPixels)
             let sizeDim = iconInfo.size.cleanValue
             let size = "\(sizeDim)x\(sizeDim)"
