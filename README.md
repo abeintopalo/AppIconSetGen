@@ -42,12 +42,6 @@ $ ./appiconsetgen <input file> [--output <output path>] [--iOS] [--watchOS] [--m
 
 ### Command line options
 
---iOS [default: false] - Generates app icons for iOS
-    --watchOS [default: false] - Generates app icons for watchOS
-    --macOS [default: false] - Generates app icons for macOS
-    --output [default: .] - Output folder of the generated asset catalog
-    --appIconSetName
-
 - `input file` - Path to an image file (.pdf, .png, etc).
 - `--iOS` - Generates app icons for iOS
 - `--watchOS` - Generates app icons for watchOS
