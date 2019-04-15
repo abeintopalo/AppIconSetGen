@@ -11,6 +11,7 @@ import Cocoa
 import Commander
 import AppIconSetGenCore
 
+let version = "0.0.1"
 let main = command(
     Argument<String>("input file", description: "Path to an image file (.pdf, .png, etc)"),
     Flag("iOS", description: "Generates app icons for iOS"),
@@ -49,4 +50,4 @@ let main = command(
     print("Done!")
 }
 
-main.run()
+main.run(version)
