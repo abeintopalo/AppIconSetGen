@@ -1,13 +1,14 @@
 
 <p align="center">
-     <img src="https://img.shields.io/badge/Swift-4.2-orange.svg" />
+     <img src="https://img.shields.io/badge/Swift-5.0-orange.svg" />
      <a href="https://swift.org/package-manager">
         <img src="https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat" alt="Swift Package Manager" />
     </a>
 </p>
 
 ## What is AppIconSetGen?
-_**AppIconSetGen** is a small tool that makes it easy to generate an App Icon set from a provided image asset (e.g. appIcon.pdf) for iOS, macOS, and watchOS platforms_
+
+_**AppIconSetGen** is a command line tool that makes it easy to generate an App Icon set from a provided image asset (e.g. appIcon.pdf) for iOS, macOS, and watchOS platforms_
 
 Benefits:
 
@@ -28,16 +29,24 @@ Using the Swift Package Manager:
 ```
 $ git clone git@github.com:abeintopalo/AppIconSetGen.git
 $ cd AppIconSetGen
-$ swift build -c release -Xswiftc -static-stdlib
+$ swift build -c release
 $ cp -f .build/release/AppIconSetGen /usr/local/bin/appiconsetgen
 ```
+
+## Requirements
+
+AppIconSetGen requires the following to be installed on your system:
+
+- Xcode 10.2 or later to provide Swift 5.0 tool chain
+- Swift 5.0 runtime (bundled with macOS 10.14.4 or if you use earlier version of macOS install [Swift 5 runtime](https://support.apple.com/kb/DL1998?locale=en_US)
+- Git
 
 ## Usage
 
 AppIconSetGen is a command line tool `appiconsetgen`, you can either run it manually or in a custom build phase using following command:
 
 ```
-$ ./appiconsetgen <input file> [--output <output path>] [--iOS] [--watchOS] [--macOS] [--appIconSetName]
+$ appiconsetgen <input file> [--output <output path>] [--iOS] [--watchOS] [--macOS] [--appIconSetName]
 ```
 
 ### Command line options
@@ -48,7 +57,6 @@ $ ./appiconsetgen <input file> [--output <output path>] [--iOS] [--watchOS] [--m
 - `--macOS` - Generates app icons for macOS
 - `--output` - Output folder for the generated App Icon set
 - `--appIconSetName` - App icon set name
-
 
 ## License
 
