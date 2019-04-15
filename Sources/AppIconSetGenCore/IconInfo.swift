@@ -82,14 +82,13 @@ public struct IconInfo {
     }
 }
 
-
 public extension IconInfo {
     init(idiom: Idiom, size: CGFloat, scale: CGFloat) {
         self.idiom = idiom
         self.size = size
         self.scale = scale
-        self.role = .any
-        self.subtype = .any
+        role = .any
+        subtype = .any
     }
 }
 
@@ -142,8 +141,3 @@ public let iconInfoItemsMacOS = [
     IconInfo(idiom: .mac, size: 512, scale: 1),
     IconInfo(idiom: .mac, size: 512, scale: 2),
 ]
-
-
-
-
-

@@ -6,10 +6,10 @@
 //
 //
 
-import Foundation
+import AppIconSetGenCore
 import Cocoa
 import Commander
-import AppIconSetGenCore
+import Foundation
 
 let version = "0.0.1"
 let main = command(

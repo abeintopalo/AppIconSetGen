@@ -6,8 +6,8 @@
 //
 //
 
-import Foundation
 import Cocoa
+import Foundation
 import PathKit
 
 public struct AppIconSet {
@@ -63,7 +63,7 @@ public struct AppIconSet {
             entryLines.append("\n\"scale\":\"\(scale)\"")
 
             result.append("\n{\(entryLines.joined(separator: ","))\n}")
-            }.joined(separator: ",")
+        }.joined(separator: ",")
 
         let contents = "{\n\"images\":[\(entries)\n],\n\"info\":{\n\"version\":1,\n\"author\":\"xcode\"\n}\n}"
         try contentsJSONFile.write(contents)
@@ -76,6 +76,5 @@ public struct AppIconSet {
     private func appIconFileName(from sizeInPixels: CGFloat) -> String {
         return "appicon_\(sizeInPixels.cleanValue).png"
     }
-    
-}
 
+}

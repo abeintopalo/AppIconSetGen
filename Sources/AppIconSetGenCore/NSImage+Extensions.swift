@@ -6,8 +6,8 @@
 //
 //
 
-import Foundation
 import Cocoa
+import Foundation
 
 extension NSImage {
     func imagePNGRepresentation(widthInPixels: CGFloat, heightInPixels: CGFloat) -> NSData? {
@@ -28,10 +28,8 @@ extension NSImage {
         draw(in: NSMakeRect(0, 0, widthInPixels, heightInPixels), from: NSZeroRect, operation: .copy, fraction: 1.0)
         NSGraphicsContext.restoreGraphicsState()
 
-        let imageProps: [NSBitmapImageRep.PropertyKey : Any] = [:]
+        let imageProps: [NSBitmapImageRep.PropertyKey: Any] = [:]
         let imageData = imageRep?.representation(using: NSBitmapImageRep.FileType.png, properties: imageProps) as NSData?
         return imageData
     }
 }
-
-
