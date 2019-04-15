@@ -11,7 +11,7 @@ import Cocoa
 import Commander
 import Foundation
 
-let version = "0.0.1"
+let version = "0.0.2"
 let main = command(
     Argument<String>("input file", description: "Path to an image file (.pdf, .png, etc)"),
     Flag("iOS", description: "Generates app icons for iOS"),
